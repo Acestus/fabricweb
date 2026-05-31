@@ -1,0 +1,10 @@
+baseURL = "https://fabric.acestus.com/"
+theme = "blowfish"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+pagination.pagerSize = 10
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]

@@ -7,38 +7,22 @@ description: "What the Fabric CI/CD Readiness Review covers."
 
 **$50 — Fixed scope**
 
-This is a single focused engagement. I look at how your team deploys Fabric
-artifacts today, find the gaps that cause drift and broken schedules, and give
-you a prioritized fix list.
+This is a single focused engagement. I look at how your team deploys Fabric artifacts today, find the gaps that cause drift and broken schedules, and give you a prioritized fix list.
 
-### What's included
+## What's included
 
-**Intake call (30 min)**
-We walk through your current deployment process — how you move notebooks,
-pipelines, and environment settings from dev to production, and what breaks
-when you do.
+**Intake call (30 min)** — We walk through your current deployment process together.
 
-**Workspace and repo review**
-I examine your Fabric workspace layout and your Git integration setup:
-how artifacts are structured, what's tracked, what's not, and where
-manual steps are hiding.
+**Workspace audit** — I review your Git integration, pipeline automation, notebook deployment patterns, and schedule configuration.
 
-**Gap checklist**
-A written list of the specific things standing between you and repeatable
-CI/CD — missing `.platform` files, untracked deployment rules, schedule
-configuration gaps, and environment drift sources.
+**Readiness report** — A scored assessment across 5 dimensions with specific remediation steps for each gap found.
 
-**Top 3 fixes**
-The three highest-leverage changes to make first. Concrete, actionable,
-prioritized by impact.
+**Fix guidance** — For every gap, you get the exact GitHub Actions workflow snippet or REST API call to close it.
 
-### Who this is for
+**Debrief call (30 min)** — We review the report together. You ask questions, I explain priorities.
 
-- Teams using Microsoft Fabric who deploy manually today
-- Platform engineers setting up Fabric for the first time
-- Anyone whose schedules break after a deployment
+## Price
 
-### How to get started
+**$50 flat.** No retainer. No upsell. No ongoing commitment required.
 
-[Send me a message](/contact) with a brief description of your current
-Fabric setup. I'll confirm availability and send a calendar link.
+[Book a Review — $50](/contact/)

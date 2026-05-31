@@ -1,0 +1,31 @@
+colorScheme = "slate"
+defaultAppearance = "dark"
+autoSwitchAppearance = false
+
+enableSearch = false
+enableCodeCopy = false
+
+[header]
+  layout = "fixed"
+
+[footer]
+  showCopyright = true
+  showThemeAttribution = false
+  showScrollToTop = true
+
+[homepage]
+  layout = "hero"
+  showRecent = false
+  showMoreLink = false
+
+[article]
+  showDate = false
+  showAuthor = false
+  showReadingTime = false
+  showTableOfContents = false
+
+[list]
+  showCards = false
+
+[sitemap]
+  excludedKinds = []

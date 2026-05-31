@@ -1,22 +1,14 @@
 ---
 title: "About"
-description: "William Weeks-Balconi — Azure platform engineer and Microsoft Fabric practitioner."
+description: "Independent Microsoft Fabric consulting from a practitioner."
 ---
 
-## William Weeks-Balconi
+## Independent Fabric Consulting
 
-I'm a cloud platform engineer who builds and runs Azure infrastructure and
-Microsoft Fabric data platforms in production.
+I'm a Microsoft Fabric practitioner who has seen the same five CI/CD deployment problems at every organization I've worked with. 
 
-My day-to-day work includes Bicep and Terraform IaC stacks, Fabric medallion
-ETL pipelines (Bronze → Silver → Gold), PySpark notebooks, Fabric CI/CD
-automation, GitHub Actions, and identity and governance tooling.
+This review exists because most teams don't need a six-figure consulting engagement — they need someone to look at their workspace for a day and tell them exactly what's broken and how to fix it.
 
-The Fabric CI/CD readiness review comes from the same patterns I've applied
-to real Fabric workspaces: getting artifacts into Git, wiring deployment
-pipelines so releases don't break schedules, and eliminating the manual drift
-that accumulates when teams copy-paste their way through deployments.
+**$50. One week. No bloated SOW.**
 
-**Portfolio:** [portfolio.acestus.com](https://portfolio.acestus.com)
-
-**Blog:** [acestus.com](https://acestus.com)
+[Download the Free Fabric CI/CD Readiness Guide](/downloads/fabric-cicd-readiness-guide.pdf)

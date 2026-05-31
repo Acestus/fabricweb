@@ -1,0 +1,21 @@
+disabled = false
+locale = "en"
+label = "English"
+weight = 1
+title = "Fabric CI/CD Readiness Review — Acestus"
+
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+  description = "Fixed-scope Microsoft Fabric CI/CD readiness review. $50. One week turnaround."
+
+[params.author]
+  name = "Acestus"
+  headline = "Independent Microsoft Fabric Consulting"
+  bio = "I audit Fabric workspaces, find CI/CD gaps, and give you a prioritized fix list — in one week for $50 flat."
+  links = [
+    { email = "mailto:hello@acestus.com" },
+    { linkedin = "https://www.linkedin.com/company/acestus" }
+  ]

@@ -1,21 +1,16 @@
 ---
-title: "Contact"
-description: "Get the Fabric CI/CD Readiness Review."
+title: "Book a Review"
+description: "Book your Fabric CI/CD Readiness Review — $50 fixed scope."
 ---
 
-## Get the review
+## Book Your Review
 
-Send an email with a brief description of your current Fabric setup —
-how you deploy today, how many workspaces, and what's breaking.
+Send a note to **hello@acestus.com** with:
 
-I'll confirm availability and send a calendar link for the intake call.
+1. Your name and organization
+2. A brief description of how your team currently deploys Fabric artifacts
+3. Any specific pain points (broken schedules, manual deployments, Git issues)
 
-**Email:** [jump@hey.com](mailto:jump@hey.com)
+I'll follow up within 24 hours to confirm and send a payment link.
 
-**LinkedIn:** [linkedin.com/in/acestus](https://linkedin.com/in/acestus)
-
-**GitHub:** [github.com/Acestus](https://github.com/Acestus)
-
----
-
-*Price: $50. Fixed scope. No retainer. No surprise follow-on work.*
+**Price: $50 flat. Turnaround: one week.**
