@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-  --color-primary: #1B72E8;
-  --color-primary-dark: #1E3A8A;
-  --color-brand-blue: #002B8F;
-  --color-navy: #00102E;
-  --color-navy-mid: #233452;
+  --color-primary: #00B4A6;
+  --color-primary-dark: #007A70;
+  --color-brand-blue: #1A1A2E;
+  --color-navy: #1A1A2E;
+  --color-navy-mid: #334155;
   --color-header-bg: #ffffff;
-  --color-footer-bg: #003399;
-  --color-accent-blue: #1B72E8;
-  --color-sky-blue: #7DC8FA;
+  --color-footer-bg: #0F1117;
+  --color-accent-blue: #00B4A6;
+  --color-sky-blue: #66D8D0;
   --color-light-gray: #F4F5F7;
-  --color-mid-gray: #6d7685;
-  --color-widget-teal: #7DC8FA;
+  --color-mid-gray: #64748B;
+  --color-widget-teal: #00B4A6;
   --color-white: #ffffff;
   --font-main: 'Poppins', sans-serif;
 }
@@ -124,17 +124,17 @@ a:hover {
 }
 
 .site-header .navbar-toggler {
-  border-color: rgba(0, 43, 143, 0.18);
+  border-color: rgba(0, 180, 166, 0.25);
 }
 
 .site-header .navbar-toggler:focus {
-  box-shadow: 0 0 0 0.2rem rgba(27, 114, 232, 0.18);
+  box-shadow: 0 0 0 0.2rem rgba(0, 180, 166, 0.25);
 }
 
 .site-header .dropdown-menu {
   border: 0;
   border-radius: 0.75rem;
-  box-shadow: 0 20px 40px rgba(0, 16, 46, 0.14);
+  box-shadow: 0 20px 40px rgba(26, 26, 46, 0.14);
 }
 
 .site-header .dropdown-header {
@@ -191,7 +191,7 @@ a:hover {
 }
 
 .section-sky-blue {
-  background: linear-gradient(135deg, #1B72E8 0%, #3B9EF5 100%);
+  background: linear-gradient(135deg, #1A1A2E 0%, #00B4A6 100%);
 }
 
 .section-light-gray {
@@ -237,7 +237,7 @@ a:hover {
 .review-card {
   background: white;
   border-radius: 8px;
-  box-shadow: 0 12px 32px rgba(0, 16, 46, 0.08);
+  box-shadow: 0 12px 32px rgba(0, 180, 166, 0.08);
   height: 100%;
   padding: 1.5rem;
 }
@@ -253,7 +253,7 @@ a:hover {
 
 .hero-section::before,
 .page-hero::before {
-  background: linear-gradient(90deg, rgba(0, 16, 46, 0.82) 0%, rgba(0, 16, 46, 0.45) 55%, rgba(0, 16, 46, 0.2) 100%);
+  background: linear-gradient(90deg, rgba(26, 26, 46, 0.85) 0%, rgba(26, 26, 46, 0.5) 55%, rgba(26, 26, 46, 0.2) 100%);
   content: "";
   inset: 0;
   position: absolute;
@@ -266,7 +266,7 @@ a:hover {
 }
 
 .home-hero {
-  background: linear-gradient(135deg, #1B5FC7 0%, #3B9EF5 60%, #7DC8FA 100%);
+  background: linear-gradient(135deg, #1A1A2E 0%, #0D5F5A 60%, #00B4A6 100%);
   min-height: clamp(640px, 82vh, 820px);
   overflow: hidden;
   padding: 4.5rem 0 7rem;
@@ -336,7 +336,7 @@ a:hover {
 
 .home-hero-image-blob {
   border-radius: 54% 46% 38% 62% / 42% 55% 45% 58%;
-  box-shadow: 0 24px 60px rgba(0, 26, 87, 0.28);
+  box-shadow: 0 24px 60px rgba(26, 26, 46, 0.28);
   overflow: hidden;
   position: relative;
   z-index: 2;
@@ -368,7 +368,7 @@ a:hover {
 .feature-card {
   border: 0;
   border-radius: 1rem;
-  box-shadow: 0 14px 30px rgba(0, 16, 46, 0.08);
+  box-shadow: 0 14px 30px rgba(0, 180, 166, 0.08);
   height: 100%;
 }
 
@@ -382,7 +382,7 @@ a:hover {
 }
 
 .simple-block hr {
-  border-color: rgba(0, 16, 46, 0.12);
+  border-color: rgba(26, 26, 46, 0.12);
   margin: 2rem 0;
   opacity: 1;
 }
@@ -394,7 +394,7 @@ a:hover {
   background: #ffffff;
   border: 0;
   border-radius: 1rem;
-  box-shadow: 0 12px 32px rgba(0, 16, 46, 0.08);
+  box-shadow: 0 12px 32px rgba(0, 180, 166, 0.08);
   height: 100%;
 }
 
@@ -429,7 +429,7 @@ a:hover {
 .tabs-card {
   background: white;
   border-radius: 1rem;
-  box-shadow: 0 12px 32px rgba(0, 16, 46, 0.08);
+  box-shadow: 0 12px 32px rgba(0, 180, 166, 0.08);
   padding: 1.5rem;
 }
 
@@ -593,12 +593,8 @@ a:hover {
   font-size: 2.5rem;
 }
 
-.section-sky-blue {
-  background: linear-gradient(135deg, var(--color-brand-blue) 0%, var(--color-primary) 100%);
-}
-
-.section-sky-blue-darker {
-  background: rgba(0,0,0,0.15);
+.section-sky-blue-tint {
+  background: #E6FAF9;
 }
 
 .text-white-75 {
