@@ -15,7 +15,7 @@ concurrency:
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
   RESOURCE_GROUP: 'rg-fabricweb-prd'
-  SWA_NAME: 'swa-fabricweb-prd-scus-001'
+  SWA_NAME: 'swa-fabricweb-prd-cus-001'
 
 jobs:
   build:
