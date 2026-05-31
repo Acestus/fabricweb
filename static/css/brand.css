@@ -398,7 +398,7 @@ a:hover {
   height: 100%;
 }
 
-.page-hero {
+.page-hero-base {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -627,12 +627,19 @@ a:hover {
 }
 
 .page-hero {
-  background: linear-gradient(135deg, var(--color-brand-blue) 0%, var(--color-primary) 100%);
+  background: linear-gradient(135deg, #1A1A2E 0%, #0D5F5A 60%, #00B4A6 100%);
   color: white;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
 }
 
 .page-hero h1 {
   color: white;
+}
+
+.page-hero .text-white-75 {
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .page-content {
