@@ -25,6 +25,8 @@ jobs:
       artifact-name: hugo-dist-${{ github.sha }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - name: Setup Go (for Hugo)
         uses: actions/setup-go@v5
