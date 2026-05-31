@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div class="container py-5">
+  <div class="text-center mx-auto mb-5" style="max-width: 720px;">
+    <h1 class="display-5 fw-bold text-brand-blue">{{ .Title }}</h1>
+    {{ with .Content }}<div class="mt-3 content-copy">{{ . }}</div>{{ end }}
+  </div>
+  <div class="row g-4">
+    {{ range .Pages.ByDate.Reverse }}
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="card h-100 shadow-sm border-0">
+          <div class="card-body d-flex flex-column">
+            <p class="text-uppercase small text-brand-blue fw-semibold mb-2">{{ .Date.Format "Jan 2, 2006" }}</p>
+            <h2 class="h4 card-title">{{ .Title }}</h2>
+            {{ with .Params.description }}<p class="card-text text-muted">{{ . }}</p>{{ end }}
+            <a class="mt-auto fw-semibold text-decoration-none text-brand-blue" href="{{ .RelPermalink }}">Read more →</a>
+          </div>
+        </article>
+      </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

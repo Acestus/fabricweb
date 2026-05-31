@@ -1,0 +1,109 @@
+{{ $path := .RelPermalink }}
+{{ $isHome := eq $path "/" }}
+{{ $isPersonalLoans := or (in $path "personal-loans") (in $path "engagement-ring-financing") (in $path "vacation-and-travel-loans") (in $path "finance-your-wedding") (in $path "site-offers") }}
+{{ $isResources := or (eq $path "/personal-loan/") (eq $path "/reprise-financial-101/") (eq $path "/blog/") (hasPrefix $path "/blog/") (eq $path "/our-process/") (eq $path "/resources-faq/") }}
+{{ $isContact := or (eq $path "/about-us/") (eq $path "/careers/") (eq $path "/customer-support/") }}
+{{ $isReviews := eq $path "/reviews/" }}
+<header class="site-header sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="/images/logo.svg" alt="Reprise Financial" height="50">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link{{ if $isHome }} active{{ end }}" href="/">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle{{ if $isPersonalLoans }} active{{ end }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Personal Loans</a>
+            <div class="dropdown-menu p-3" style="min-width: 600px;">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <h6 class="dropdown-header">Loan Types</h6>
+                  <a class="dropdown-item" href="/personal-loans-for-credit-card-refinancing/">Credit Card Refinancing</a>
+                  <a class="dropdown-item" href="/personal-loans-for-debt-consolidation/">Debt Consolidation</a>
+                  <a class="dropdown-item" href="/personal-loans-for-dental-work-and-expenses/">Dental Work &amp; Expenses</a>
+                  <a class="dropdown-item" href="/engagement-ring-financing/">Engagement Rings</a>
+                  <a class="dropdown-item" href="/personal-loans-for-large-purchases/">Large Purchases</a>
+                  <a class="dropdown-item" href="/personal-loans-for-medical-expenses/">Medical Expenses</a>
+                  <a class="dropdown-item" href="/personal-loans-for-moving-expenses/">Moving Expenses</a>
+                  <a class="dropdown-item" href="/personal-loans-for-other-uses/">Other Uses</a>
+                  <a class="dropdown-item" href="/personal-loans-for-special-occasions/">Special Occasions</a>
+                  <a class="dropdown-item" href="/personal-loans-for-unexpected-expenses/">Unexpected Expenses</a>
+                  <a class="dropdown-item" href="/vacation-and-travel-loans/">Vacation &amp; Travel</a>
+                  <a class="dropdown-item" href="/finance-your-wedding/">Finance Your Wedding</a>
+                </div>
+                <div class="col-md-4">
+                  <h6 class="dropdown-header">By Amount</h6>
+                  <a class="dropdown-item" href="/5000-personal-loans/">$5,000</a>
+                  <a class="dropdown-item" href="/10000-personal-loans/">$10,000</a>
+                  <a class="dropdown-item" href="/15000-personal-loans/">$15,000</a>
+                  <a class="dropdown-item" href="/20000-personal-loans/">$20,000</a>
+                </div>
+                <div class="col-md-4">
+                  <h6 class="dropdown-header">By Credit</h6>
+                  <a class="dropdown-item" href="/personal-loans-for-bad-credit/">Bad Credit</a>
+                  <a class="dropdown-item" href="/personal-loans-for-excellent-credit/">Excellent Credit</a>
+                  <a class="dropdown-item" href="/personal-loans-for-fair-credit/">Fair Credit</a>
+                  <a class="dropdown-item" href="/personal-loans-for-good-credit/">Good Credit</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle{{ if $isResources }} active{{ end }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+            <div class="dropdown-menu p-3" style="min-width: 600px;">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <h6 class="dropdown-header">Tools</h6>
+                  <a class="dropdown-item" href="/personal-loan/">How to get a Personal Loan</a>
+                  <a class="dropdown-item" href="/reprise-financial-101/">Reprise Financial 101</a>
+                  <a class="dropdown-item" href="/blog/">Reprise Resources</a>
+                  <a class="dropdown-item" href="/our-process/">Our Process</a>
+                </div>
+                <div class="col-md-4">
+                  <h6 class="dropdown-header">Blogs</h6>
+                  <a class="dropdown-item" href="/blog/are-you-eligible-for-a-reprise-loan/">Are you Eligible for a Reprise Loan</a>
+                  <a class="dropdown-item" href="/blog/can-anyone-get-a-personal-loan/">Can Anyone get a Personal Loan</a>
+                  <a class="dropdown-item" href="/blog/credit-card-debt/">Credit Card Debt</a>
+                  <a class="dropdown-item" href="/blog/how-to-improve-your-credit-score/">How to Improve your Credit Score</a>
+                  <a class="dropdown-item" href="/blog/paying-off-debt/">Paying Off Debt</a>
+                  <a class="dropdown-item" href="/blog/personal-loan-vs-credit-card/">Personal Loan vs. Credit Card</a>
+                </div>
+                <div class="col-md-4">
+                  <h6 class="dropdown-header">FAQs</h6>
+                  <a class="dropdown-item" href="/resources-faq/">View Frequently Asked Questions</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle{{ if $isContact }} active{{ end }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contact</a>
+            <div class="dropdown-menu p-3">
+              <a class="dropdown-item" href="/about-us/">About Us</a>
+              <a class="dropdown-item" href="/careers/">Careers</a>
+              <a class="dropdown-item" href="/customer-support/">Customer Support</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link{{ if $isReviews }} active{{ end }}" href="/reviews/">Reviews</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="/images/icon-login.svg" alt="" width="18" height="18">
+              <span>My Account</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end p-3">
+              <a class="dropdown-item" href="https://renewfinancial.myaccountinfo.com/Account/LogOn">Log In</a>
+              <a class="dropdown-item" href="https://renewfinancial.myaccountinfo.com/Account/Register">Register Account</a>
+              <a class="dropdown-item" href="https://renewfinancial.myaccountinfo.com/Account/ForgotPassword">Forgot Password</a>
+            </div>
+          </li>
+          <li class="nav-item ms-lg-2 mt-3 mt-lg-0">
+            <a class="btn btn-primary-cta" href="/site-offers/">GET STARTED</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

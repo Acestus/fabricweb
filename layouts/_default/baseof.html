@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>{{ partial "head.html" . }}</head>
+<body>
+  {{ partial "header.html" . }}
+  <main>{{ block "main" . }}{{ end }}</main>
+  {{ partial "footer.html" . }}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Open nav dropdowns on hover (desktop only)
+    document.addEventListener('DOMContentLoaded', function () {
+      if (!window.matchMedia('(min-width: 992px)').matches) return;
+      document.querySelectorAll('.navbar .dropdown').forEach(function (el) {
+        var toggle = el.querySelector('.dropdown-toggle');
+        var dd = bootstrap.Dropdown.getOrCreateInstance(toggle, { autoClose: true });
+        el.addEventListener('mouseenter', function () { dd.show(); });
+        el.addEventListener('mouseleave', function () { dd.hide(); });
+      });
+    });
+  </script>
+</body>
+</html>

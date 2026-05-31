@@ -1,0 +1,8 @@
+public/
+.hugo_build.lock
+resources/_gen/
+hugo_stats.json
+node_modules/
+e2e/playwright-report/
+test-results/
+playwright/.cache/

@@ -1,0 +1,127 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  id-token: write
+  contents: read
+
+concurrency:
+  group: deploy-prd
+  cancel-in-progress: false
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+  RESOURCE_GROUP: 'rg-fabric-web-prd-usw2-001'
+  SWA_NAME: 'swa-fabric-web-prd-usw2-001'
+
+jobs:
+  build:
+    name: Hugo Build
+    runs-on: ubuntu-24.04
+    outputs:
+      artifact-name: hugo-dist-${{ github.sha }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Go (for Hugo)
+        uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
+
+      - name: Install Hugo
+        run: |
+          go install github.com/gohugoio/hugo@latest
+          echo "$HOME/go/bin" >> $GITHUB_PATH
+          hugo version
+
+      - name: Build site
+        run: hugo --minify --gc
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hugo-dist-${{ github.sha }}
+          path: public/
+          retention-days: 3
+
+  deploy-infra:
+    name: Deploy Infrastructure (Bicep)
+    runs-on: ubuntu-24.04
+    needs: [build]
+    environment: prd
+    outputs:
+      swa-hostname: ${{ steps.deploy.outputs.swaHostname }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Azure Login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Ensure resource group exists
+        uses: azure/cli@v2
+        with:
+          inlineScript: |
+            az group create \
+              --name ${{ env.RESOURCE_GROUP }} \
+              --location westus2 \
+              --tags Application=fabric-web Environment=prd ManagedBy=bicep
+
+      - name: Deploy Bicep stack
+        id: deploy
+        uses: azure/cli@v2
+        with:
+          inlineScript: |
+            output=$(az deployment group create \
+              --resource-group ${{ env.RESOURCE_GROUP }} \
+              --template-file stacks-bicep/fabric-web/main.bicep \
+              --parameters stacks-bicep/fabric-web/prd/main.prd.bicepparam \
+              --name "deploy-fabric-web-prd-$(date +%Y%m%d%H%M%S)" \
+              --query "properties.outputs" -o json)
+            echo "swaHostname=$(echo $output | jq -r '.swaHostname.value')" >> $GITHUB_OUTPUT
+
+  deploy-site:
+    name: Deploy Site to SWA
+    runs-on: ubuntu-24.04
+    needs: [build, deploy-infra]
+    environment: prd
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: hugo-dist-${{ github.sha }}
+          path: public/
+
+      - name: Azure Login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Get SWA deployment token
+        id: swa-token
+        uses: azure/cli@v2
+        with:
+          inlineScript: |
+            token=$(az staticwebapp secrets list \
+              --name ${{ env.SWA_NAME }} \
+              --resource-group ${{ env.RESOURCE_GROUP }} \
+              --query "properties.apiKey" -o tsv)
+            echo "token=$token" >> $GITHUB_OUTPUT
+            echo "::add-mask::$token"
+
+      - name: Deploy to SWA
+        uses: azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ steps.swa-token.outputs.token }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: upload
+          app_location: public
+          skip_app_build: true
