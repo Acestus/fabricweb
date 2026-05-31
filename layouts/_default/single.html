@@ -1,6 +1,13 @@
 {{ define "main" }}
-<div class="container py-5 page-content">
-  <h1 class="display-5 fw-bold text-brand-blue">{{ .Title }}</h1>
-  <div class="mt-4 content-copy">{{ .Content }}</div>
-</div>
+<section class="page-hero py-5">
+  <div class="container">
+    <h1 class="mb-2">{{ .Title }}</h1>
+    {{ with .Params.description }}<p class="lead text-muted">{{ . }}</p>{{ end }}
+  </div>
+</section>
+<section class="py-5 bg-white">
+  <div class="container page-content">
+    {{ .Content }}
+  </div>
+</section>
 {{ end }}
