@@ -14,8 +14,8 @@ concurrency:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
-  RESOURCE_GROUP: 'rg-fabric-web-prd-usw2-001'
-  SWA_NAME: 'swa-fabric-web-prd-usw2-001'
+  RESOURCE_GROUP: 'rg-fabricweb-prd-usw2-001'
+  SWA_NAME: 'swa-fabricweb-prd-usw2-001'
 
 jobs:
   build:
@@ -71,7 +71,7 @@ jobs:
             az group create \
               --name ${{ env.RESOURCE_GROUP }} \
               --location westus2 \
-              --tags Application=fabric-web Environment=prd ManagedBy=bicep
+              --tags Application=fabricweb Environment=prd ManagedBy=bicep
 
       - name: Deploy Bicep stack
         id: deploy
@@ -80,9 +80,9 @@ jobs:
           inlineScript: |
             output=$(az deployment group create \
               --resource-group ${{ env.RESOURCE_GROUP }} \
-              --template-file stacks-bicep/fabric-web/main.bicep \
-              --parameters stacks-bicep/fabric-web/prd/main.prd.bicepparam \
-              --name "deploy-fabric-web-prd-$(date +%Y%m%d%H%M%S)" \
+              --template-file stacks-bicep/fabricweb/main.bicep \
+              --parameters stacks-bicep/fabricweb/prd/main.prd.bicepparam \
+              --name "deploy-fabricweb-prd-$(date +%Y%m%d%H%M%S)" \
               --query "properties.outputs" -o json)
             echo "swaHostname=$(echo $output | jq -r '.swaHostname.value')" >> $GITHUB_OUTPUT
 

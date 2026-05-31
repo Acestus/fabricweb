@@ -1,5 +1,5 @@
 // ============================================================
-// fabric-web — fabric.acestus.com
+// fabricweb — fabric.acestus.com
 // ACE-20: Hugo SWA landing page for Fabric CI/CD readiness review
 // Subscription: df64929f-810d-4176-8097-35cd05cae10d (acestus personal)
 // ============================================================
@@ -22,13 +22,13 @@ param location string = 'westus2'
 @description('Resource tags')
 param tags object = {
   Environment: environment
-  Application: 'fabric-web'
+  Application: 'fabricweb'
   ManagedBy: 'bicep'
   Purpose: 'marketing-landing-page'
   Project: 'ACE-20'
 }
 
-var projectName = 'fabric-web'
+var projectName = 'fabricweb'
 var swaName = 'swa-${projectName}-${environment}-${regionCode}-${instanceNumber}'
 
 resource staticWebApp 'Microsoft.Web/staticSites@2022-09-01' = {
