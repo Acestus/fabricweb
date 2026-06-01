@@ -5,7 +5,7 @@ description: "Book your Fabric CI/CD Readiness Review — $50 fixed scope."
 
 ## Book Your Review
 
-Send a note to **hello@acestus.com** with:
+Send a note to **jump@hey.com** with:
 
 1. Your name and organization
 2. A brief description of how your team currently deploys Fabric artifacts
