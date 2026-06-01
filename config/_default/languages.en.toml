@@ -16,6 +16,6 @@ title = "Fabric CI/CD Readiness Review — Acestus"
   headline = "Independent Microsoft Fabric Consulting"
   bio = "I audit Fabric workspaces, find CI/CD gaps, and give you a prioritized fix list — in one week for $50 flat."
   links = [
-    { email = "mailto:hello@acestus.com" },
+    { email = "jump@hey.com" },
     { linkedin = "https://www.linkedin.com/company/acestus" }
   ]
